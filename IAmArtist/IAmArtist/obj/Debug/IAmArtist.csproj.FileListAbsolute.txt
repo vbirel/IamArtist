@@ -1,0 +1,10 @@
+C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\bin\Debug\IAmArtist.exe.config
+C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\bin\Debug\IAmArtist.exe
+C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\bin\Debug\IAmArtist.pdb
+C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csprojResolveAssemblyReference.cache
+C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.Properties.Resources.resources
+C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csproj.GenerateResource.Cache
+C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csproj.CoreCompileInputs.cache
+C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.exe
+C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.pdb
+C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.FormMain.resources
