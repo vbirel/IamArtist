@@ -40,12 +40,7 @@ namespace IAmArtist
         private void FormMain_Load(object sender, EventArgs e)
         {
            
-            TrackBar saizTrack = new TrackBar();
-            saizTrack.Minimum = 1;
-            saizTrack.Maximum = 10;
-            saizTrack.Scroll += saizTrackScroll;
-            flowLayoutMenu.Controls.Add(saizTrack);
-            saize.Text ="толщина линии: "+ saizTrack.Value.ToString();
+           
             
             flowLayoutMenu.Controls.Add(saize);
 
@@ -65,7 +60,7 @@ namespace IAmArtist
         }
         public void CreateMenu()//создание меню
         {
-            RadioButton[] buttonMenu = new RadioButton[10];
+            RadioButton[] buttonMenu = new RadioButton[11];
             for (int i = 0; i < buttonMenu.Length; i++)
             {
                 buttonMenu[i] = new RadioButton();
@@ -84,6 +79,7 @@ namespace IAmArtist
             buttonMenu[7].Text = "стерка";
             buttonMenu[8].Text = "текст";
             buttonMenu[9].Text = "картинка";
+            buttonMenu[10].Text = "триугольник";
            
             buttonMenu[0].CheckedChanged += buttonMenu0_Click;
             buttonMenu[1].CheckedChanged += buttonMenu1_Click;
@@ -95,6 +91,7 @@ namespace IAmArtist
             buttonMenu[7].CheckedChanged += buttonMenu7_Click;
             buttonMenu[8].CheckedChanged += buttonMenu8_Click;
             buttonMenu[9].CheckedChanged += buttonMenu9_Click;
+            buttonMenu[10].CheckedChanged += buttonMenu10_Click;
 
             buttonMenu[0].Checked = true;
 
@@ -102,7 +99,13 @@ namespace IAmArtist
             picBox.BackColor = Color.Transparent;
             picBox.SizeMode = PictureBoxSizeMode.StretchImage;
             flowLayoutMenu.Controls.Add(picBox);
-            
+
+            TrackBar saizTrack = new TrackBar();
+            saizTrack.Minimum = 1;
+            saizTrack.Maximum = 10;
+            saizTrack.Scroll += saizTrackScroll;
+            flowLayoutMenu.Controls.Add(saizTrack);
+            saize.Text = "толщина линии: " + saizTrack.Value.ToString();
         }
 
         public void GrapicsMain()//подготовка к графике
@@ -310,8 +313,51 @@ namespace IAmArtist
                 }else if(mod==1)
                 {
                     grStels.DrawLine(pen, x0, y0, x, y);
+                }else if(mod==2)
+                {
+                    int tmp;
+                    int x0_m = x0;
+                    int y0_m = y0;
+
+                    if(x < x0_m)
+                    {
+                        tmp = x;
+                        x = x0_m;
+                        x0_m = tmp;
+                    }
+
+                    if (y < y0_m)
+                    {
+                        tmp = y;
+                        y = y0_m;
+                        y0_m = tmp;
+                    }
+
+                    grStels.DrawRectangle(pen, x0_m, y0_m, x - x0_m, y - y0_m);
+
+                }else if(mod==3)
+                {
+                    int tmp;
+                    int x0_m = x0;
+                    int y0_m = y0;
+
+                    if (x < x0_m)
+                    {
+                        tmp = x;
+                        x = x0_m;
+                        x0_m = tmp;
+                    }
+
+                    if (y < y0_m)
+                    {
+                        tmp = y;
+                        y = y0_m;
+                        y0_m = tmp;
+                    }
+
+                    grStels.DrawEllipse(pen, x0_m, y0_m, x - x0_m, y - y0_m);
                 }
-                pictureBoxMain.Invalidate();
+               // pictureBoxMain.Invalidate();
             }
             pictureBoxMain.Refresh();
         }
@@ -393,6 +439,18 @@ namespace IAmArtist
                 toolStripComboBoxImage.Visible = false;
                 picBox.Visible = false;
             }
+        }
+
+        private void buttonMenu10_Click(object sender, EventArgs e)// для карандаша
+        {
+            RadioButton buttonMenu = (RadioButton)sender;
+
+            if (buttonMenu.Checked)
+            {
+                toolStripStatusText.Text = "триугольник";
+                mod = 10;
+            }
+
         }
 
         private void toolStripButtonClear_Click(object sender, EventArgs e)//отчистка

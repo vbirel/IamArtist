@@ -28,3 +28,23 @@ C:\Users\михаил\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.csproj.
 C:\Users\михаил\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.csproj.CoreCompileInputs.cache
 C:\Users\михаил\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.exe
 C:\Users\михаил\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.pdb
+C:\Users\михаил\Documents\GitHub\IamArtist\IAmArtist\IAmArtist\bin\Debug\IAmArtist.exe.config
+C:\Users\михаил\Documents\GitHub\IamArtist\IAmArtist\IAmArtist\bin\Debug\IAmArtist.exe
+C:\Users\михаил\Documents\GitHub\IamArtist\IAmArtist\IAmArtist\bin\Debug\IAmArtist.pdb
+C:\Users\михаил\Documents\GitHub\IamArtist\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csprojResolveAssemblyReference.cache
+C:\Users\михаил\Documents\GitHub\IamArtist\IAmArtist\IAmArtist\obj\Debug\IAmArtist.FormMain.resources
+C:\Users\михаил\Documents\GitHub\IamArtist\IAmArtist\IAmArtist\obj\Debug\IAmArtist.Properties.Resources.resources
+C:\Users\михаил\Documents\GitHub\IamArtist\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csproj.GenerateResource.Cache
+C:\Users\михаил\Documents\GitHub\IamArtist\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csproj.CoreCompileInputs.cache
+C:\Users\михаил\Documents\GitHub\IamArtist\IAmArtist\IAmArtist\obj\Debug\IAmArtist.exe
+C:\Users\михаил\Documents\GitHub\IamArtist\IAmArtist\IAmArtist\obj\Debug\IAmArtist.pdb
+C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\bin\Debug\IAmArtist.exe.config
+C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\bin\Debug\IAmArtist.exe
+C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\bin\Debug\IAmArtist.pdb
+C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csprojAssemblyReference.cache
+C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\obj\Debug\IAmArtist.FormMain.resources
+C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\obj\Debug\IAmArtist.Properties.Resources.resources
+C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csproj.GenerateResource.cache
+C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csproj.CoreCompileInputs.cache
+C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\obj\Debug\IAmArtist.exe
+C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\obj\Debug\IAmArtist.pdb
