@@ -64,7 +64,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(745, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(768, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -121,7 +121,7 @@
             this.flowLayoutMenu.Location = new System.Drawing.Point(0, 25);
             this.flowLayoutMenu.Name = "flowLayoutMenu";
             this.flowLayoutMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutMenu.Size = new System.Drawing.Size(0, 461);
+            this.flowLayoutMenu.Size = new System.Drawing.Size(0, 474);
             this.flowLayoutMenu.TabIndex = 1;
             this.flowLayoutMenu.WrapContents = false;
             // 
@@ -135,7 +135,7 @@
             this.toolStripTextBoxText});
             this.toolStrip2.Location = new System.Drawing.Point(0, 25);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(745, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(768, 25);
             this.toolStrip2.TabIndex = 2;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -183,7 +183,7 @@
             this.pictureBoxMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxMain.Location = new System.Drawing.Point(0, 50);
             this.pictureBoxMain.Name = "pictureBoxMain";
-            this.pictureBoxMain.Size = new System.Drawing.Size(745, 436);
+            this.pictureBoxMain.Size = new System.Drawing.Size(768, 449);
             this.pictureBoxMain.TabIndex = 3;
             this.pictureBoxMain.TabStop = false;
             this.pictureBoxMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxMain_Paint);
@@ -199,9 +199,9 @@
             this.toolStripStatusXorY,
             this.toolStripStatusDate,
             this.toolStripStatusTame});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 464);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 477);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(745, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(768, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -234,16 +234,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(745, 486);
+            this.ClientSize = new System.Drawing.Size(768, 499);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBoxMain);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.flowLayoutMenu);
             this.Controls.Add(this.toolStrip1);
+            this.MinimumSize = new System.Drawing.Size(784, 538);
             this.Name = "FormMain";
             this.Text = "Графический редактор";
             this.Load += new System.EventHandler(this.FormMain_Load);
-            this.ResizeEnd += new System.EventHandler(this.FormMain_ResizeEnd);
+            //this.ResizeEnd += new System.EventHandler(this.FormMain_ResizeEnd);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);

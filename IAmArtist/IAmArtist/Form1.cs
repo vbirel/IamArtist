@@ -24,6 +24,7 @@ namespace IAmArtist
         Pen pen;
         Color fon = Color.White, penCol = Color.Black;
         Label saize = new Label();
+        
 
 
         public FormMain()
@@ -106,8 +107,9 @@ namespace IAmArtist
 
         public void GrapicsMain()//подготовка к графике
         {
-            w = pictureBoxMain.Width;
-            h = pictureBoxMain.Height;
+
+            w = SystemInformation.VirtualScreen.Width;
+            h = SystemInformation.VirtualScreen.Height;
             bitMain = new Bitmap(w, h);
             grPic = pictureBoxMain.CreateGraphics();
             grMain = Graphics.FromImage(bitMain);
@@ -126,10 +128,19 @@ namespace IAmArtist
             if(openFileDialog1.ShowDialog()==DialogResult.OK)
             {
                 grMain.DrawImage(Image.FromFile(openFileDialog1.FileName), 0, 0);
-               
+                pictureBoxMain.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBoxMain.Invalidate();
-                
+               
             }
+        }
+
+        public void cutImeg()
+        {
+            Rectangle rect = new Rectangle(new Point(0, 0), new Size(pictureBoxMain.Width, pictureBoxMain.Height));
+
+            Bitmap CuttedImage = CutImage(bitMain, rect);
+            CuttedImage.SetResolution(pictureBoxMain.Width, pictureBoxMain.Height);
+            pictureBoxMain.Image = CuttedImage;
         }
 
         private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)// сохранение иображения
@@ -137,6 +148,7 @@ namespace IAmArtist
             if (pictureBoxMain.Image == null)
                 return;
 
+            cutImeg();
             saveFileDialog1.Filter= "Image Files(*.BMP)|*.BMP|Image Files(*.JPG)|*.JPG|Image Files(*.GIF)|*.GIF|Image Files(*.PNG)|*.PNG|All files (*.*)|*.*";
             saveFileDialog1.OverwritePrompt = true;
             saveFileDialog1.CheckPathExists = true;
@@ -147,6 +159,7 @@ namespace IAmArtist
 
                     pictureBoxMain.Image.Save(saveFileDialog1.FileName);
                     standarSave = saveFileDialog1.FileName;
+                    chenged = false;
                 }
                 catch
                 {
@@ -155,6 +168,18 @@ namespace IAmArtist
                 }
             }
 
+        }
+
+        public Bitmap CutImage(Bitmap bitMain, Rectangle rect)//обрезка
+        {
+
+            Bitmap bmp = new Bitmap(bitMain.Width, bitMain.Height); 
+
+            Graphics g = Graphics.FromImage(bmp);
+
+            g.DrawImage(bitMain, 0, 0, rect, GraphicsUnit.Pixel);
+
+            return bmp;
         }
 
         private void buttonMenu0_Click(object sender, EventArgs e)// для карандаша
@@ -201,7 +226,13 @@ namespace IAmArtist
 
         private void buttonMenu3_Click(object sender, EventArgs e)// для овала
         {
+            RadioButton buttonMenu = (RadioButton)sender;
 
+            if (buttonMenu.Checked)
+            {
+                toolStripStatusText.Text = "овал";
+                mod = 3;
+            }
         }
 
         private void pictureBoxMain_MouseDown(object sender, MouseEventArgs e)//нажатие на поля для рисование
@@ -221,6 +252,7 @@ namespace IAmArtist
 
         public void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            cutImeg();
             pictureBoxMain.Image.Save(standarSave);
         }
 
@@ -249,22 +281,10 @@ namespace IAmArtist
                 Environment.Exit(0);
         }
 
-        private void FormMain_ResizeEnd(object sender, EventArgs e)
-        {
-            grOld.DrawImage(pictureBoxMain.Image, 0, 0);
-
-            w = pictureBoxMain.Width;
-            h = pictureBoxMain.Height;
-            bitMain = new Bitmap(w, h);
-            grPic = pictureBoxMain.CreateGraphics();
-            grOld = pictureBoxMain.CreateGraphics();
-            grMain.Clear(fon);
-            pictureBoxMain.Image = bitMain;
-            stels = new Bitmap(w, h);
-            grMain = grOld;
-            grStels = Graphics.FromImage(stels);
-            grStels.Clear(fon);
-        }
+        //private void FormMain_ResizeEnd(object sender, EventArgs e)
+        //{
+        //   // grOld.DrawImage(pictureBoxMain.Image, 0, 0);
+        //}
 
         private void pictureBoxMain_Paint(object sender, PaintEventArgs e)
         {
@@ -293,6 +313,7 @@ namespace IAmArtist
                 }
                 pictureBoxMain.Invalidate();
             }
+            pictureBoxMain.Refresh();
         }
 
         private void buttonMenu4_Click(object sender, EventArgs e)// для ломаной
@@ -376,7 +397,8 @@ namespace IAmArtist
 
         private void toolStripButtonClear_Click(object sender, EventArgs e)//отчистка
         {
-            pictureBoxMain.Image = null;
+            grMain.Clear(fon);
+            pictureBoxMain.Invalidate();
         }
 
         private void toolStripButtonColor_Click(object sender, EventArgs e)//выбор цвета

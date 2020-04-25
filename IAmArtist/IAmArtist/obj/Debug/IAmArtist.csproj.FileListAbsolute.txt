@@ -8,3 +8,23 @@ C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArti
 C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.exe
 C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.pdb
 C:\Users\михаил\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.FormMain.resources
+C:\Users\Dead4W\Desktop\vbirel paint\IAmArtist\bin\Debug\IAmArtist.exe.config
+C:\Users\Dead4W\Desktop\vbirel paint\IAmArtist\bin\Debug\IAmArtist.exe
+C:\Users\Dead4W\Desktop\vbirel paint\IAmArtist\bin\Debug\IAmArtist.pdb
+C:\Users\Dead4W\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.csprojAssemblyReference.cache
+C:\Users\Dead4W\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.FormMain.resources
+C:\Users\Dead4W\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.Properties.Resources.resources
+C:\Users\Dead4W\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.csproj.GenerateResource.cache
+C:\Users\Dead4W\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.csproj.CoreCompileInputs.cache
+C:\Users\Dead4W\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.exe
+C:\Users\Dead4W\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.pdb
+C:\Users\михаил\Desktop\vbirel paint\IAmArtist\bin\Debug\IAmArtist.exe.config
+C:\Users\михаил\Desktop\vbirel paint\IAmArtist\bin\Debug\IAmArtist.exe
+C:\Users\михаил\Desktop\vbirel paint\IAmArtist\bin\Debug\IAmArtist.pdb
+C:\Users\михаил\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.csprojResolveAssemblyReference.cache
+C:\Users\михаил\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.FormMain.resources
+C:\Users\михаил\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.Properties.Resources.resources
+C:\Users\михаил\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.csproj.GenerateResource.Cache
+C:\Users\михаил\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.csproj.CoreCompileInputs.cache
+C:\Users\михаил\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.exe
+C:\Users\михаил\Desktop\vbirel paint\IAmArtist\obj\Debug\IAmArtist.pdb
