@@ -19,12 +19,15 @@ namespace IAmArtist
         string standarSave= Application.StartupPath;
         public Graphics grMain, grStels, grPic, grOld;
         bool logg = false, chenged=false;
-        int x0, y0, x, y, w=0, h=0, penW=1, mod=0;
+        int x0, y0, x, y, w=0, h=0, penW=1, mod=0, countPoint = 1;
         public Bitmap bitMain, stels;
         Pen pen;
         Color fon = Color.White, penCol = Color.Black;
         Label saize = new Label();
-        
+      
+        Point[] pointMas = new Point[1];
+
+        Random ran = new Random();
 
 
         public FormMain()
@@ -60,7 +63,7 @@ namespace IAmArtist
         }
         public void CreateMenu()//создание меню
         {
-            RadioButton[] buttonMenu = new RadioButton[11];
+            RadioButton[] buttonMenu = new RadioButton[12];
             for (int i = 0; i < buttonMenu.Length; i++)
             {
                 buttonMenu[i] = new RadioButton();
@@ -79,7 +82,8 @@ namespace IAmArtist
             buttonMenu[7].Text = "стерка";
             buttonMenu[8].Text = "текст";
             buttonMenu[9].Text = "картинка";
-            buttonMenu[10].Text = "триугольник";
+            buttonMenu[10].Text = "многоугольник";
+            buttonMenu[11].Text = "сплайн";
            
             buttonMenu[0].CheckedChanged += buttonMenu0_Click;
             buttonMenu[1].CheckedChanged += buttonMenu1_Click;
@@ -92,6 +96,7 @@ namespace IAmArtist
             buttonMenu[8].CheckedChanged += buttonMenu8_Click;
             buttonMenu[9].CheckedChanged += buttonMenu9_Click;
             buttonMenu[10].CheckedChanged += buttonMenu10_Click;
+            buttonMenu[11].CheckedChanged += buttonMenu11_Click;
 
             buttonMenu[0].Checked = true;
 
@@ -244,6 +249,56 @@ namespace IAmArtist
             chenged = true;
             x0 = e.X;
             y0 = e.Y;
+            if(mod==4)
+            {
+                Point p = new Point();
+                p.X = x0;
+                p.Y = y0;
+                countPoint++;
+                Array.Resize(ref pointMas, countPoint);
+                pointMas[countPoint - 1] = p; 
+                pointMas[0] = pointMas[1];
+                grMain.DrawLines(pen, pointMas);
+                pictureBoxMain.Invalidate();
+            }else if(mod==10)
+            {
+                Point p = new Point();
+                p.X = x0;
+                p.Y = y0;
+                countPoint++;
+                Array.Resize(ref pointMas, countPoint);
+                pointMas[countPoint - 1] = p;
+                pointMas[0] = pointMas[1];
+                grMain.DrawPolygon(pen, pointMas);
+                pictureBoxMain.Invalidate();
+            }else if(mod==5)
+            {
+                Point p = new Point();
+                p.X = x0;
+                p.Y = y0;
+                countPoint++;
+                Array.Resize(ref pointMas, countPoint);
+                pointMas[countPoint - 1] = p;
+                pointMas[0] = pointMas[1];
+                grMain.DrawBeziers(pen, pointMas);
+                if(pointMas.Length==4)
+                {
+                    Array.Resize(ref pointMas, 1);
+                    countPoint = 1;
+                }
+                pictureBoxMain.Invalidate();
+            }else if(mod==11)
+            {
+                Point p = new Point();
+                p.X = x0;
+                p.Y = y0;
+                countPoint++;
+                Array.Resize(ref pointMas, countPoint);
+                pointMas[countPoint - 1] = p;
+                pointMas[0] = pointMas[1];
+                grMain.DrawCurve(pen, pointMas);
+                pictureBoxMain.Invalidate();
+            }
         }
 
         private void pictureBoxMain_MouseUp(object sender, MouseEventArgs e)//jngecrfybt vsib
@@ -441,13 +496,25 @@ namespace IAmArtist
             }
         }
 
-        private void buttonMenu10_Click(object sender, EventArgs e)// для карандаша
+        private void buttonMenu11_Click(object sender, EventArgs e)// для сплайна
         {
             RadioButton buttonMenu = (RadioButton)sender;
 
             if (buttonMenu.Checked)
             {
-                toolStripStatusText.Text = "триугольник";
+                toolStripStatusText.Text = "карондаш";
+                mod = 11;
+            }
+
+        }
+
+        private void buttonMenu10_Click(object sender, EventArgs e)// для многоугольника
+        {
+            RadioButton buttonMenu = (RadioButton)sender;
+
+            if (buttonMenu.Checked)
+            {
+                toolStripStatusText.Text = "многоугольник";
                 mod = 10;
             }
 
@@ -457,6 +524,9 @@ namespace IAmArtist
         {
             grMain.Clear(fon);
             pictureBoxMain.Invalidate();
+            Array.Resize(ref pointMas, 1);
+            countPoint = 1;
+            
         }
 
         private void toolStripButtonColor_Click(object sender, EventArgs e)//выбор цвета
