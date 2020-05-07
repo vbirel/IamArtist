@@ -50,6 +50,9 @@
             this.toolStripStatusXorY = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusTame = new System.Windows.Forms.ToolStripStatusLabel();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.toolStripFaunt = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDate = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
@@ -64,7 +67,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(768, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(806, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -84,21 +87,21 @@
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.открытьToolStripMenuItem.Text = "открыть...";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.сохранитьToolStripMenuItem.Text = "сохранить...";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // сохранитьКакToolStripMenuItem
             // 
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.сохранитьКакToolStripMenuItem.Text = "сохранить как...";
             this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.сохранитьКакToolStripMenuItem_Click);
             // 
@@ -121,7 +124,7 @@
             this.flowLayoutMenu.Location = new System.Drawing.Point(0, 25);
             this.flowLayoutMenu.Name = "flowLayoutMenu";
             this.flowLayoutMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutMenu.Size = new System.Drawing.Size(0, 474);
+            this.flowLayoutMenu.Size = new System.Drawing.Size(0, 506);
             this.flowLayoutMenu.TabIndex = 1;
             this.flowLayoutMenu.WrapContents = false;
             // 
@@ -132,10 +135,12 @@
             this.toolStripButtonClear,
             this.toolStripButtonColor,
             this.toolStripComboBoxImage,
-            this.toolStripTextBoxText});
+            this.toolStripTextBoxText,
+            this.toolStripFaunt,
+            this.toolStripDate});
             this.toolStrip2.Location = new System.Drawing.Point(0, 25);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(768, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(806, 25);
             this.toolStrip2.TabIndex = 2;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -184,7 +189,7 @@
             this.pictureBoxMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxMain.Location = new System.Drawing.Point(0, 50);
             this.pictureBoxMain.Name = "pictureBoxMain";
-            this.pictureBoxMain.Size = new System.Drawing.Size(768, 449);
+            this.pictureBoxMain.Size = new System.Drawing.Size(806, 481);
             this.pictureBoxMain.TabIndex = 3;
             this.pictureBoxMain.TabStop = false;
             this.pictureBoxMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxMain_Paint);
@@ -200,9 +205,9 @@
             this.toolStripStatusXorY,
             this.toolStripStatusDate,
             this.toolStripStatusTame});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 477);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 509);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(768, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(806, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -230,18 +235,39 @@
             this.toolStripStatusTame.Size = new System.Drawing.Size(56, 17);
             this.toolStripStatusTame.Text = "    время:";
             // 
+            // toolStripFaunt
+            // 
+            this.toolStripFaunt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripFaunt.Image = ((System.Drawing.Image)(resources.GetObject("toolStripFaunt.Image")));
+            this.toolStripFaunt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripFaunt.Name = "toolStripFaunt";
+            this.toolStripFaunt.Size = new System.Drawing.Size(48, 22);
+            this.toolStripFaunt.Text = "Calibri ";
+            this.toolStripFaunt.Visible = false;
+            this.toolStripFaunt.Click += new System.EventHandler(this.toolStripFaunt_Click);
+            // 
+            // toolStripDate
+            // 
+            this.toolStripDate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDate.Image")));
+            this.toolStripDate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDate.Name = "toolStripDate";
+            this.toolStripDate.Size = new System.Drawing.Size(92, 22);
+            this.toolStripDate.Text = "поставить дату";
+            this.toolStripDate.Click += new System.EventHandler(this.toolStripDate_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(768, 499);
+            this.ClientSize = new System.Drawing.Size(806, 531);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBoxMain);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.flowLayoutMenu);
             this.Controls.Add(this.toolStrip1);
-            this.MinimumSize = new System.Drawing.Size(784, 538);
+            this.MinimumSize = new System.Drawing.Size(822, 570);
             this.Name = "FormMain";
             this.Text = "Графический редактор";
             this.Load += new System.EventHandler(this.FormMain_Load);
@@ -280,6 +306,9 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusXorY;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusDate;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusTame;
+        private System.Windows.Forms.ToolStripButton toolStripFaunt;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.ToolStripButton toolStripDate;
     }
 }
 

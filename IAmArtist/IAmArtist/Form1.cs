@@ -13,17 +13,18 @@ namespace IAmArtist
     public partial class FormMain : Form
     {
         public PictureBox picBox;
-      
+        Font font = new Font("Calibri", 12.0F, FontStyle.Bold, GraphicsUnit.Point);
+        public SolidBrush druSolid = new SolidBrush(Color.Black);      
        string [] picName={"атом","какойто_толстый_муж","король","пустыный_котя","солнышко","страные_телепузики","то_что_у_меня-на_аве","хэт_кид"};
-
         string standarSave= Application.StartupPath;
         public Graphics grMain, grStels, grPic, grOld;
-        bool logg = false, chenged=false;
+        bool logg = false, chenged = false, drag = false;
         int x0, y0, x, y, w=0, h=0, penW=1, mod=0, countPoint = 1;
         public Bitmap bitMain, stels;
         Pen pen;
         Color fon = Color.White, penCol = Color.Black;
         Label saize = new Label();
+        
       
         Point[] pointMas = new Point[1];
 
@@ -37,7 +38,10 @@ namespace IAmArtist
             timer.Tick += timerTick;
             timer.Start();
 
-            
+            fontDialog1.ShowColor = false;
+
+
+
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -247,6 +251,7 @@ namespace IAmArtist
         {
             logg = true;
             chenged = true;
+            drag = true;
             x0 = e.X;
             y0 = e.Y;
             if(mod==4)
@@ -298,6 +303,10 @@ namespace IAmArtist
                 pointMas[0] = pointMas[1];
                 grMain.DrawCurve(pen, pointMas);
                 pictureBoxMain.Invalidate();
+            }else if(mod==8)
+            {
+                grMain.DrawString(toolStripTextBoxText.Text, font, druSolid, x0, y0);
+                grPic.DrawString(toolStripTextBoxText.Text, font, druSolid, x0, y0);
             }
         }
 
@@ -337,6 +346,22 @@ namespace IAmArtist
                 }
             }else
                 Environment.Exit(0);
+        }
+
+        private void toolStripFaunt_Click(object sender, EventArgs e)//шрифт
+        {
+            if(fontDialog1.ShowDialog() == DialogResult.OK)
+            {
+                font = fontDialog1.Font;
+                toolStripFaunt.Text = fontDialog1.Font.Name;
+                toolStripFaunt.Font = fontDialog1.Font;
+            }
+        }
+
+        private void toolStripDate_Click(object sender, EventArgs e)
+        {
+            SizeF sizeF = grMain.MeasureString(toolStripStatusDate.Text, font);
+            grMain.DrawString(toolStripStatusDate.Text, font, druSolid, pictureBoxMain.Width - sizeF.Width, pictureBoxMain.Height- sizeF.Height- statusStrip1.Height);
         }
 
         //private void FormMain_ResizeEnd(object sender, EventArgs e)
@@ -470,10 +495,12 @@ namespace IAmArtist
                 toolStripStatusText.Text = "текст";
                 toolStripTextBoxText.Visible = true;
                 mod = 8;
+                toolStripFaunt.Visible = true;
             }
             else
             {
                 toolStripTextBoxText.Visible = false;
+                toolStripFaunt.Visible = false;
             }
         }
 
@@ -536,6 +563,7 @@ namespace IAmArtist
             {
                 penCol = colorDialog1.Color;
                 pen.Color = penCol;
+                druSolid.Color = colorDialog1.Color;
             }
         }
 

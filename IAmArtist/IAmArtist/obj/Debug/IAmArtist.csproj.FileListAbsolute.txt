@@ -48,3 +48,13 @@ C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csproj.GenerateR
 C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csproj.CoreCompileInputs.cache
 C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\obj\Debug\IAmArtist.exe
 C:\Users\Dead4W\Desktop\IAmArtist\IAmArtist\obj\Debug\IAmArtist.pdb
+C:\Users\vbirel\Documents\прога\IAmArtist\IAmArtist\bin\Debug\IAmArtist.exe.config
+C:\Users\vbirel\Documents\прога\IAmArtist\IAmArtist\bin\Debug\IAmArtist.exe
+C:\Users\vbirel\Documents\прога\IAmArtist\IAmArtist\bin\Debug\IAmArtist.pdb
+C:\Users\vbirel\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csprojAssemblyReference.cache
+C:\Users\vbirel\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.FormMain.resources
+C:\Users\vbirel\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.Properties.Resources.resources
+C:\Users\vbirel\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csproj.GenerateResource.cache
+C:\Users\vbirel\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.csproj.CoreCompileInputs.cache
+C:\Users\vbirel\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.exe
+C:\Users\vbirel\Documents\прога\IAmArtist\IAmArtist\obj\Debug\IAmArtist.pdb
